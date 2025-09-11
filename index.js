@@ -8,24 +8,26 @@ const app = express();
 // Directorio publico
 app.use( express.static('public') )
 
+app.use('/api/auth', require('./routes/auth'));
+
 // app.get('/', (req, res) => {
 //     return res.json({
 //         ok: true
 //     })
 // })
 
-app.get('/data', (req, res) => {
-    try {
-        const data = fs.readFileSync('data.json', 'utf8');
-        return res.json({
-            data: JSON.parse(data)
-        })
-    } catch (error) {
-        console.error('Error reading or parsing the JSON file:', error);
-        return [];
-    }
+// app.get('/data', (req, res) => {
+//     try {
+//         const data = fs.readFileSync('data.json', 'utf8');
+//         return res.json({
+//             data: JSON.parse(data)
+//         })
+//     } catch (error) {
+//         console.error('Error reading or parsing the JSON file:', error);
+//         return [];
+//     }
     
-})
+// })
 
 
 
