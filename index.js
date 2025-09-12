@@ -6,7 +6,10 @@ const fs = require('fs')
 const app = express();
 
 // Directorio publico
-app.use( express.static('public') )
+app.use( express.static('public') );
+
+//lectura y paseo del body
+app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));
 
