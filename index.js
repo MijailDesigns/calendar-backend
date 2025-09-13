@@ -19,7 +19,9 @@ app.use( express.static('public') );
 //lectura y paseo del body
 app.use(express.json());
 
+// ruTAS
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
 
 // app.get('/', (req, res) => {
 //     return res.json({

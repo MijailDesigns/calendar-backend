@@ -5,6 +5,9 @@ const { crearUsuario, login, revalidarToken } = require("../controllers/auth")
 const { validarJWT } = require('../middlewares/validar-jwt')
 const router = Router();
 
+
+// /api/auth
+
 router.post(
     '/new', 
     [ //middlewares
